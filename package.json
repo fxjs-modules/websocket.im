@@ -1,0 +1,55 @@
+{
+	"author": "Richard <richardo2016@gmail.com>",
+	"name": "@fxjs/websocket.im",
+	"version": "0.0.1",
+	"description": "IM implement based on fibjs's websocket",
+	"keywords": [
+		"sql",
+		"ddl",
+		"sync",
+		"mysql",
+		"postgres",
+		"sqlite"
+	],
+	"license": "MIT",
+	"repository": "http://github.com/fxjs-modules/websocket.im.git",
+	"main": "./lib",
+	"scripts": {
+		"build": "fib-typify src -o lib",
+		"test-db": "fibjs test/run-db",
+		"test-db-sqlite": "cross-env URI=sqlite:test.db npm run test-db",
+		"test-db-mysql": "cross-env URI=mysql://root:@localhost:3306/websocket.im npm run test-db",
+		"test": "fibjs test/run",
+		"ci": "npm run build && npm run test"
+	},
+	"engines": {
+		"fibjs": "*"
+	},
+	"analyse": false,
+	"dependencies": {
+		"@fxjs/orm": "^1.6.10",
+		"fib-push": "^1.3.0",
+		"fib-rpc": "^0.4.0"
+	},
+	"devDependencies": {
+		"@fibjs/ci": "^2.1.0",
+		"@fibjs/detect-port": "^1.0.2",
+		"@types/fibjs": "^0.26.5",
+		"cross-env": "^5.2.0",
+		"fib-app": "^1.13.13",
+		"fib-typify": "^0.5.0",
+		"should": "^13.2.3"
+	},
+	"ci": {
+		"type": "travis, appveyor",
+		"version": [
+			"0.21.0",
+			"0.22.0",
+			"0.23.0",
+			"0.24.0",
+			"0.25.0",
+			"0.26.0",
+			"0.26.1"
+		]
+	}
+}
